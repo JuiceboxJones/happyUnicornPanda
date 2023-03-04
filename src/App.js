@@ -10,22 +10,22 @@ function App() {
     const y = Math.floor(Math.random() * (window.screen.height - height));
   
     // Open the new window with the specified dimensions and location
-    for(let i=0;i< (x+y); ){
-    window.open("", "New Window", `width=${width},height=${height},left=${x},top=${y}`);
-    };
+    setTimeout(()=>{
+      window.open("", "New Window", `width=${width},height=${height},left=${x},top=${y}`);
+    }, 1000);
+    
     // Call the same function recursively until the "End" key is pressed
     document.addEventListener("keyup", (event) => {
       if (event.key === "End") {
+        clearTimeout();
         return;
       } else {
         openRandomWindow();
-        
+
       }
     });
   }
-  
-  // Call the function on page load
-  window.addEventListener("load", openRandomWindow());
+
 
   return (
     <div className="App">
