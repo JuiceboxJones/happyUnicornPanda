@@ -10,9 +10,7 @@ function App() {
     const y = Math.floor(Math.random() * (window.screen.height - height));
   
     // Open the new window with the specified dimensions and location
-    setTimeout(()=>{
-      window.open("", "New Window", `width=${width},height=${height},left=${x},top=${y}`);
-    }, 1000);
+
     
     // Call the same function recursively until the "End" key is pressed
     document.addEventListener("keyup", (event) => {
@@ -21,6 +19,10 @@ function App() {
         return;
       }
     });
+
+    setTimeout(()=>{
+      window.open("", "New Window", `width=${width},height=${height},left=${x},top=${y}`);
+    }, 1000,);
   }
 
 
@@ -28,7 +30,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src="Octocat.png" className="App-logo" alt="logo" />
-          {this.openRandomWindow()}
+          {openRandomWindow()}
         <p className="small">
           Edit <code>src/App.js</code> and save to reload.
         </p>
