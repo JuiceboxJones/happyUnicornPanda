@@ -19,6 +19,7 @@ function App() {
         return;
       } else {
         openRandomWindow();
+        
       }
     });
   }
