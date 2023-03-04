@@ -19,9 +19,6 @@ function App() {
       if (event.key === "End") {
         clearTimeout();
         return;
-      } else {
-        openRandomWindow();
-
       }
     });
   }
